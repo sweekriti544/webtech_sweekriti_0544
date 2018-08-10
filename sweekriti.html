@@ -1,0 +1,962 @@
+
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/25F6F6EB-EEDF-AE42-9569-54E0DBEE116A/main.js" charset="UTF-8"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width" />
+		<title>Philabundance - Leading the Fight Against Hunger</title>
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="pingback" href="https://www.philabundance.org/xmlrpc.php"/>
+		
+<!-- This site is optimized with the Yoast SEO plugin v7.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Philabundance is the area&#039;s largest hunger relief organization and a proud member of Feeding America on a mission to make nutritious food accessible to all."/>
+<link rel="canonical" href="https://www.philabundance.org/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Philabundance - Leading the Fight Against Hunger" />
+<meta property="og:description" content="Philabundance is the area&#039;s largest hunger relief organization and a proud member of Feeding America on a mission to make nutritious food accessible to all." />
+<meta property="og:url" content="https://www.philabundance.org/" />
+<meta property="og:site_name" content="Philabundance" />
+<meta property="og:image" content="https://www.philabundance.org/wp-content/uploads/2018/05/Homepage-SEO-FB.jpg" />
+<meta property="og:image:secure_url" content="https://www.philabundance.org/wp-content/uploads/2018/05/Homepage-SEO-FB.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Philabundance is the area&#039;s largest hunger relief organization and a proud member of Feeding America on a mission to make nutritious food accessible to all." />
+<meta name="twitter:title" content="Philabundance - Leading the Fight Against Hunger" />
+<meta name="twitter:site" content="@philabundance" />
+<meta name="twitter:image" content="http://www.philabundance.org/wp-content/uploads/2018/05/TW.jpg" />
+<meta name="twitter:creator" content="@philabundance" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.philabundance.org\/","name":"Philabundance","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.philabundance.org\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.philabundance.org\/","sameAs":["https:\/\/www.facebook.com\/Philabundance\/","https:\/\/www.instagram.com\/philabundance\/","https:\/\/www.linkedin.com\/company\/360791\/","https:\/\/www.youtube.com\/channel\/UCYaiX3vLIIc9PyspRo89yOg","https:\/\/twitter.com\/philabundance"],"@id":"https:\/\/www.philabundance.org\/#organization","name":"Philabundance","logo":"https:\/\/www.philabundance.org\/wp-content\/uploads\/2017\/09\/logo2.jpg"}</script>
+<meta name="google-site-verification" content="l7jLuGWFmLxGENBRjUH2NNkgUA2FWIHwDWRZNyhP1eY" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//www.philabundance.org' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='mf_webfonts_3441677-css'  href='https://www.philabundance.org/wp-content/plugins/MyFontsWebfontsKit/MyFontsWebfontsKit.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='abc_style-css'  href='https://www.philabundance.org/wp-content/plugins/advanced-browser-check/css/style.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/owl.carousel.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style_default-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/owl.theme.default.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style_2-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/owl.theme.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style_3-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/owl.transitions.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='swipebox_css-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/swipebox.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_fallback-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/grid_fallback.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_style-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/grid_style.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/animate.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='accordion-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/accordion.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='component-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/component.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='normalize-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/normalize.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='style_stapel_1-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/custom_stapel.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='style_stapel_3-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/stapel.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='enin_badge-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/enin-badge.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='sb_instagram_styles-css'  href='https://www.philabundance.org/wp-content/plugins/instagram-feed-pro/css/sb-instagram.css?ver=2.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='bodhi-svgs-attachment-css'  href='https://www.philabundance.org/wp-content/plugins/svg-support/css/svgs-attachment.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsl-styles-css'  href='https://www.philabundance.org/wp-content/plugins/wp-store-locator/css/styles.min.css?ver=2.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='foundation-grid-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/foundation-sites/css/foundation-flex.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='maincss-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/assets/css/main.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='header-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/header/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/swiper/dist/css/swiper.min.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='banner-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/banner/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='cta-home-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/cta_home/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_posts-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/home_promos/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='videojs-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/assets/vendor/video-js/video-js.min.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='banner-video-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/banner_video/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='data-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/data/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='featured_story-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/featured_story/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='content_slider-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/content_slider/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='form_food-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/form_food/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='footer-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/footer/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='https://www.philabundance.org/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.14' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.philabundance.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/advanced-browser-check/js/jquery.cookie.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/advanced-browser-check/js/script.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/owl.carousel.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/jquery.swipebox.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/modernizr.custom.26633.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var GridRotator = {"pluginsUrl":"https:\/\/www.philabundance.org\/wp-content\/plugins"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/jquery.gridrotator.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/ios-orientationchange-fix.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/modernizr.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/classie.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/photostack.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/jquery.stapel.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/modernizr.custom.63321.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/form_food/js/scripts.js?ver=0.46'></script>
+<link rel='https://api.w.org/' href='https://www.philabundance.org/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.philabundance.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.philabundance.org/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://www.philabundance.org/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.philabundance.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.philabundance.org%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.philabundance.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.philabundance.org%2F&#038;format=xml" />
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+   <script type="text/javascript">
+
+		jQuery(function(){
+		  jQuery(document.body)
+			  .on('click touchend','#swipebox-slider .current img', function(e){
+				  jQuery('#swipebox-next').click();
+				  return false;
+			  })
+				.on('click touchend','video', function(e){
+					jQuery('video').play();
+					return false;
+			  })
+			  .on('click touchend','#swipebox-slider .current', function(e){
+				  jQuery('#swipebox-close').trigger('click');
+			  });
+
+		});
+                /* ridimensionamento immagine profilo in badge */
+                jQuery(document).ready(function(){
+                  jQuery('#div_shortcode_badge #badge_image_profile').height(jQuery('#div_shortcode_badge #badge_image_profile').width());
+                  jQuery('#div_shortcode_badge_widget #badge_image_profile').height(jQuery('#div_shortcode_badge_widget #badge_image_profile').width());
+
+                });
+               jQuery( window ).resize(function() {
+  jQuery('#div_shortcode_badge #badge_image_profile').height(jQuery('#div_shortcode_badge #badge_image_profile').width());
+  jQuery('#div_shortcode_badge_widget #badge_image_profile').height(jQuery('#div_shortcode_badge_widget #badge_image_profile').width());
+
+});
+
+//Grid displaying after loading of images
+	function display_grid(){
+		jQuery('[id^="ei-grid-loading-"]').hide();
+		jQuery('[id^="ei-grid-list-"]').show();
+	}
+
+	window.onload = display_grid;
+
+
+</script>
+   
+<!--BEGIN: TRACKING CODE MANAGER BY INTELLYWP.COM IN HEAD//-->
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1600362486680557');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1600362486680557&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2326313-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2326313-1', {
+  'linker': {
+    'domains': ['www.philabundance.org', 'philabundance.org', 'secure3.convio.net']
+  }
+});
+
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NZPC6L');</script>
+<!-- End Google Tag Manager -->
+<!-- Hotjar Tracking Code for https://www.philabundance.org/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:676087,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<meta name="msvalidate.01" content="1B5CBE5055D6B196E7FFBBFBC5FEB2FD" />
+<meta name="google-site-verification" content="FgE3K2ATsmiy85VaTGOzrMKJE7t8fn3YcgUTML5z_IA" />
+<!--END: https://wordpress.org/plugins/tracking-code-manager IN HEAD//--><link rel="icon" href="https://www.philabundance.org/wp-content/uploads/2017/10/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.philabundance.org/wp-content/uploads/2017/10/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.philabundance.org/wp-content/uploads/2017/10/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.philabundance.org/wp-content/uploads/2017/10/cropped-favicon-270x270.png" />
+<style type='text/css'></style>		<style type="text/css" id="wp-custom-css">
+			/*Advo blog "Farm Bill" block quote edit*/
+.postid-6203 .module-editor .content blockquote:before {
+    background-image:none; 
+}
+
+.postid-6203 .module-editor .content blockquote:after {
+    background-image:none;
+}
+
+/*Volunteer blog "Waste Not, Want Not" block quote edit*/
+.postid-6522 .module-editor .content blockquote:before {
+    background-image:none; 
+}
+
+.postid-6522 .module-editor .content blockquote:after {
+    background-image:none;
+}
+		</style>
+	
+	</head>
+	<body class="home page-template page-template-frontpage page-template-frontpage-php page page-id-5">
+		<div id="site">
+<header id="main-header" class="">
+<div class = "close"></div>
+    <div data-sticky-container>
+        <div class="header-inner sticky" data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%">
+            <div class="row header-top full-width">
+                <div class="large-12 columns">
+                    <div id="util-nav">
+                        <ul class="menu align-right align-middle">
+                                                                                                <li class="members">
+                                        <a href="https://www.philabundance.org/member-agencies/" >
+                                                                                            <div class="utility-icon">
+                                                    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav---Rollover" class="utility-icon-outline" transform="translate(-960.000000, -17.000000)" stroke-width="1.5" stroke="#5EBA46">
+            <g id="Nav---On-Load">
+                <g id="Utility" transform="translate(953.000000, 11.000000)">
+                    <path d="M17.1764865,14.1361092 C17.9994586,13.4388675 18.5262113,12.373821 18.5262113,11.1791166 C18.5262113,9.07813043 16.9004782,7.37537902 14.8945231,7.37537902 C12.8891997,7.37537902 11.262835,9.07813043 11.262835,11.1791166 C11.262835,12.4062354 11.820536,13.4944352 12.6820355,14.1903538 C9.95669043,15.1932175 8,17.9047862 8,21.1019104 L20.9477578,21.1019104 L22,21.1019104 C22,17.8492186 19.9763602,15.0953126 17.1764865,14.1361092 Z" id="Page-1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                                                </div>
+                                                                                        <span class="utility-label">Member Agencies</span>
+                                        </a>
+                                    </li>
+                                                                    <li class="members">
+                                        <a href="http://www.philabundance.org/about/philabundance-community-kitchen/" >
+                                                                                            <div class="utility-icon">
+                                                    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav---Rollover" class="utility-icon-outline" transform="translate(-960.000000, -17.000000)" stroke-width="1.5" stroke="#5EBA46">
+            <g id="Nav---On-Load">
+                <g id="Utility" transform="translate(953.000000, 11.000000)">
+                    <path d="M17.1764865,14.1361092 C17.9994586,13.4388675 18.5262113,12.373821 18.5262113,11.1791166 C18.5262113,9.07813043 16.9004782,7.37537902 14.8945231,7.37537902 C12.8891997,7.37537902 11.262835,9.07813043 11.262835,11.1791166 C11.262835,12.4062354 11.820536,13.4944352 12.6820355,14.1903538 C9.95669043,15.1932175 8,17.9047862 8,21.1019104 L20.9477578,21.1019104 L22,21.1019104 C22,17.8492186 19.9763602,15.0953126 17.1764865,14.1361092 Z" id="Page-1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                                                </div>
+                                                                                        <span class="utility-label">Philabundance Community Kitchen</span>
+                                        </a>
+                                    </li>
+                                                                                        <li class="translate">
+                                <a>
+                                    <label class="googletranslate">
+                                        <div class="utility-icon">
+                                                <svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g id="Nav---Rollover" transform="translate(-1087.000000, -18.000000)" stroke-width="1" class="utility-icon-outline" stroke="#5EBA46">
+                                                            <g id="Nav---On-Load">
+                                                                <g id="Utility" transform="translate(953.000000, 11.000000)">
+                                                                    <g id="Icon---globe" transform="translate(135.000000, 8.000000)">
+                                                                        <path d="M14.879625,7.47345 C14.879625,11.56395 11.563875,14.8797 7.473375,14.8797 C3.38325,14.8797 0.067125,11.56395 0.067125,7.47345 C0.067125,3.38295 3.38325,0.0672 7.473375,0.0672 C11.563875,0.0672 14.879625,3.38295 14.879625,7.47345 Z" id="Stroke-1"></path>
+                                                                        <path d="M10.6524375,7.47345 C10.6524375,11.56395 9.2833125,14.8797 7.5939375,14.8797 C5.9045625,14.8797 4.5350625,11.56395 4.5350625,7.47345 C4.5350625,3.38295 5.9045625,0.0672 7.5939375,0.0672 C9.2833125,0.0672 10.6524375,3.38295 10.6524375,7.47345 Z" id="Stroke-3"></path>
+                                                                        <path d="M0.0678375,6.81818182 L14.9827125,6.81818182" id="Stroke-5"></path>
+                                                                        <path d="M13.35105,3.01995 C11.997675,3.7947 9.86805,4.2942 7.4733,4.2942 C5.0658,4.2942 2.926425,3.78945 1.5738,3.007575" id="Stroke-7"></path>
+                                                                        <path d="M13.35105,11.8771125 C11.997675,11.1023625 9.86805,10.6028625 7.4733,10.6028625 C5.0658,10.6028625 2.926425,11.1076125 1.5738,11.8898625" id="Stroke-9"></path>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                        </div>
+                                        <select onchange="window.location.hash=this.options[this.selectedIndex].value; window.location.reload();" class="notranslate">
+                                            <option disabled="disabled" selected="selected" style="font-weight: bold;">English</option>
+                                            <option value="googtrans(en|en)">English</option>
+                                            <option value="googtrans(en|es)">Spanish</option>
+                                            <option value="googtrans(en|zh-CN)">Chinese Simplified</option>
+                                            <option value="googtrans(en|zh-TW)">Chinese Traditional</option>
+                                            <option value="googtrans(en|vi)">Vietnamese</option>
+                                            <option value="googtrans(en|ko)">Korean</option>
+                                            <option value="googtrans(en|ne)">Nepali</option>
+                                            <option value="googtrans(en|ht)">Haitian Creole</option>
+                                            <option value="googtrans(en|uk)">Ukrainian</option>
+                                            <option value="googtrans(en|ru)">Russian</option>
+                                            <option value="googtrans(en|ar)">Arabic</option>
+                                        </select>
+                                    </label>
+                                </a>
+                            </li>
+                            <!--<div id="google_translate_element"></div>--><script type="text/javascript">
+                            function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,en,es,ht,ko,ne,ru,uk,vi,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                            }
+                            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                            <li class="search">
+                                <a id="search-toggle">
+                                    <form role="search" method="get" id="searchform" class="searchform" action="/">
+<div class = "search-container">
+    <input type="search" value="" name="s" class="search-input" id="search-terms" placeholder="Enter Search Term">    
+    </div> 
+    <div class="form-action">
+		<input type="submit" id="searchsubmit" class="search-submit" value="Search">
+        <div id="search-toggle" class="utility-icon">
+            <svg width="16px" height="17px" viewBox="0 0 16 17" version="1.1"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Nav---Rollover" transform="translate(-1516.000000, -17.000000)">
+                        <g id="Nav---On-Load">
+                            <g id="Utility" transform="translate(953.000000, 11.000000)">
+                                <g id="Icon---Search" transform="translate(564.000000,7.000000)">
+                                    <path d="M12.1503965,6.2079337 C12.1503965,9.54804486 9.46629247,12.2558873 6.15452232,12.2558873 C2.8435941,12.2558873 0.159069079,9.54804486 0.159069079,6.2079337 C0.159069079,2.86782255 2.8435941,0.160404706 6.15452232,0.160404706 C9.46629247,0.160404706 12.1503965,2.86782255 12.1503965,6.2079337" id="Fill-1"></path>
+                                    <path class="utility-icon-outline" d="M12.1503965,6.2079337 C12.1503965,9.54804486 9.46629247,12.2558873 6.15452232,12.2558873 C2.8435941,12.2558873 0.159069079,9.54804486 0.159069079,6.2079337 C0.159069079,2.86782255 2.8435941,0.160404706 6.15452232,0.160404706 C9.46629247,0.160404706 12.1503965,2.86782255 12.1503965,6.2079337 Z" id="Stroke-3" stroke="#5EBA46" stroke-width="1.5"></path>
+                                    <path class="utility-icon-outline" d="M9.97339281,10.8705437 L14.2448791,15.1989832" id="Stroke-5" stroke="#5EBA46" stroke-width="1.5"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <span class="utility-label">Search</span>
+	</div>
+</form>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                        <div class="row header-bottom full-width align-middle">
+                <div class="large-3 columns" id="main-logo">
+                                        <a href="/"><img src="https://www.philabundance.org/wp-content/themes/push10custom/assets/imgs/logo.svg" alt="Philabundance" class="logo"/></a>                 </div>
+                <div class="large-9 columns">
+                 <div id = "menu-trigger"></div>
+                    <div id = "search-trigger"></div>
+                    <div class="row">
+                        <div class="large-12 columns align-right">
+                                                        <nav id="main-nav">
+                                <ul class="menu align-right">
+                                    <li id="menu-item-167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-167"><a href="https://www.philabundance.org/find-food/">Find Food</a>
+<ul class="sub-menu">
+	<li id="menu-item-229" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-229"><a href="https://www.philabundance.org/find-food/free-farmers-markets/">Free Food For All</a></li>
+	<li id="menu-item-230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a href="https://www.philabundance.org/find-food/free-food-for-kids/">Free Food for Kids</a></li>
+	<li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="https://www.philabundance.org/find-food/food-support-for-seniors/">Free Food For Seniors</a></li>
+	<li id="menu-item-227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-227"><a href="https://www.philabundance.org/find-food/food-map/">Food Map</a></li>
+</ul>
+</li>
+<li id="menu-item-168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-168"><a href="https://www.philabundance.org/get-involved/">Get Involved</a>
+<ul class="sub-menu">
+	<li id="menu-item-161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-161"><a href="https://www.philabundance.org/volunteer/">Volunteer</a></li>
+	<li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="https://www.philabundance.org/get-involved/hunger-fundraisers/">Host a Fundraiser</a></li>
+	<li id="menu-item-231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231"><a href="https://www.philabundance.org/advocate/">Be an Advocate</a></li>
+	<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="https://www.philabundance.org/get-involved/donate-food/">Donate Food</a></li>
+	<li id="menu-item-233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-233"><a href="https://www.philabundance.org/get-involved/donate-food/food-drives/">Host a Food Drive</a></li>
+	<li id="menu-item-234" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-234"><a href="https://www.philabundance.org/get-involved/help-rescue-food/">Help Rescue Food</a></li>
+	<li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="https://www.philabundance.org/get-involved/partner-with-us/">Partner with Us</a></li>
+</ul>
+</li>
+<li id="menu-item-169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-169"><a href="https://www.philabundance.org/donate/">Donate</a>
+<ul class="sub-menu">
+	<li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237"><a href="https://www.philabundance.org/donate/giving-societies/">Giving Societies</a></li>
+	<li id="menu-item-931" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-931"><a href="https://www.philabundance.org/donate/">Donate Now</a></li>
+	<li id="menu-item-1985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1985"><a href="https://www.philabundance.org/get-involved/donate-food/">Donate Food</a></li>
+</ul>
+</li>
+<li id="menu-item-6010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6010"><a href="https://www.philabundance.org/news-blog/">News</a></li>
+<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="https://www.philabundance.org/impact/">Our Impact</a></li>
+<li id="menu-item-170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-170"><a href="https://www.philabundance.org/about/">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159"><a href="https://www.philabundance.org/about/leadership/">Leadership</a></li>
+	<li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240"><a href="https://www.philabundance.org/about/philabundance-community-kitchen/">Philabundance Community Kitchen</a></li>
+	<li id="menu-item-241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-241"><a href="https://www.philabundance.org/about/philabundance-community-kitchen/pckatering/">PCKatering</a></li>
+	<li id="menu-item-6009" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6009"><a href="https://www.philabundance.org/upcycle/">Upcycle</a></li>
+	<li id="menu-item-6655" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6655"><a href="https://newton.newtonsoftware.com/career/CareerHome.action?clientId=8a78858b5e0ce0e4015e1a7690257957">Careers</a></li>
+	<li id="menu-item-238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-238"><a href="https://www.philabundance.org/about/faqs/">FAQ</a></li>
+</ul>
+</li>
+<li id="menu-item-242" class="highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-242"><a href="https://www.philabundance.org/donate/">Give Now</a></li>
+
+                                </ul>
+                            </nav>                           
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</header>
+
+<nav id="mobile-nav">
+    <ul class="mobile-footer-menu">
+        <li id="menu-item-1816" class="donate menu-item menu-item-type-post_type menu-item-object-page menu-item-1816"><a href="https://www.philabundance.org/donate/">Donate</a></li>
+<li id="menu-item-1819" class="find-food menu-item menu-item-type-post_type menu-item-object-page menu-item-1819"><a href="https://www.philabundance.org/find-food/">Find Food</a></li>
+<li id="menu-item-1838" class="volunteer menu-item menu-item-type-post_type menu-item-object-page menu-item-1838"><a href="https://www.philabundance.org/volunteer/">Volunteer</a></li>
+<li id="menu-item-1824" class="get-involved menu-item menu-item-type-post_type menu-item-object-page menu-item-1824"><a href="https://www.philabundance.org/get-involved/">Get Involved</a></li>
+<li id="menu-item-1815" class="contact menu-item menu-item-type-post_type menu-item-object-page menu-item-1815"><a href="https://www.philabundance.org/contact/">Contact</a></li>
+
+    </ul>
+</nav>
+<main id="main-content"><section  class="module module-banner" style="background-image:url()">
+    <div class = "swiper-button-next"></div>
+    <div class = "swiper-button-prev"></div>
+    <div class="banner-link v-arrow banner-down"></div>
+
+
+    <div class="swiper-container" data-swiper="{&quot;effect&quot;:&quot;fade&quot;,&quot;autoplay&quot;:&quot;5000&quot;,&quot;loop&quot;:true,&quot;nextButton&quot;:&quot;.swiper-button-next&quot;,&quot;prevButton&quot;:&quot;.swiper-button-prev&quot;}">
+        <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2018/05/Aaron-Chea-KidsBites-EDITED_1800x828_acf_cropped-1600x736.jpg)">
+                <div class="banner-wrap row align-middle align-left">
+        <div class="small-8 circle-col columns">
+            <div class="circle">
+                <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                    <circle cx="250" cy="250" r="250" />
+                </svg>
+            </div>
+            <div class="banner-inner">
+                                <h1 class="banner-title">MORE THAN <em>700,000</em> PEOPLE IN OUR AREA DON’T KNOW WHERE THEIR NEXT MEAL WILL COME FROM.</h1>
+                                 <div class="banner-subtitle">
+                    …Or if they’ll have one at all.
+                </div>
+                              </div>
+        </div>
+    </div>
+            </div>
+                        <div class="swiper-slide" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2018/08/PCKatering-A-Spot3-1600x831.jpg)">
+                <div class="banner-wrap row align-middle align-left">
+        <div class="small-8 circle-col columns">
+            <div class="circle">
+                <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                    <circle cx="250" cy="250" r="250" />
+                </svg>
+            </div>
+            <div class="banner-inner">
+                                <h1 class="banner-title">PCKatering offers quality cuisine while benefiting students, graduates and our neighbors in need.</h1>
+                                 <div class="banner-subtitle">
+                    Hosting an event or ordering-in lunch?
+                </div>
+                                  <div class="link">
+                <a href="http://www.philabundance.org/about/philabundance-community-kitchen/pckatering/" class="button" >
+                    
+                    <svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"></path></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"></use></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"></path></g></svg>
+                
+                <span>Order PCKatering</span></a>
+            </div>
+                            </div>
+        </div>
+    </div>
+            </div>
+                        <div class="swiper-slide" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2018/05/Daniel-Taylor-Fresh-Connect-Bucks-Co-FINAL_1800x867_acf_cropped-1600x771.jpg)">
+                <div class="banner-wrap row align-middle align-left">
+        <div class="small-8 circle-col columns">
+            <div class="circle">
+                <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                    <circle cx="250" cy="250" r="250" />
+                </svg>
+            </div>
+            <div class="banner-inner">
+                                <h1 class="banner-title">MORE THAN <em>700,000</em> PEOPLE IN OUR AREA DON’T KNOW WHERE THEIR NEXT MEAL WILL COME FROM.</h1>
+                                 <div class="banner-subtitle">
+                    …Or if they’ll have one at all.
+                </div>
+                              </div>
+        </div>
+    </div>
+            </div>
+                    </div>
+    </div>
+    
+</section><section  class="module module-cta-home ">
+    <div class="content row align-top align-middle">
+        <div class="content-inner medium-6 small-12 columns text-center text-col">
+                        <h3 style="font-size:12.857142857143vw" class="title">We Seek</h3>
+                    </div>
+        <div class="content-inner medium-6 small-12 columns description-col">
+                        <div class="description">To Drive Hunger from Our Communities Today and End Hunger Forever.</div>
+                          <div class="link">
+                <a href="http://www.philabundance.org/get-involved/"  class="button">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Give Help</span></a>
+            </div>
+                          <div class="link">
+                <a href="http://www.philabundance.org/find-food/"  class="button">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Find Help</span></a>
+            </div>
+                       </div>
+    </div>
+</section><section  class="module module-home-promos ">
+    
+    
+    <div class="content-wrap row align-top grid full-width" data-equalizer="item">
+        <div class="swiper-container" data-swiper="{&quot;slidesPerView&quot;:&quot;3&quot;,&quot;spaceBetween&quot;:0,&quot;draggable&quot;:false,&quot;simulateTouch&quot;:false,&quot;direction&quot;:&quot;horizontal&quot;,&quot;nextButton&quot;:&quot;.swiper-button-next-promos&quot;,&quot;prevButton&quot;:&quot;.swiper-button-prev-promos&quot;,&quot;pagination&quot;:&quot;.module-home-promos .swiper-pagination&quot;,&quot;breakpoints&quot;:{&quot;900&quot;:{&quot;slidesPerView&quot;:&quot;1&quot;},&quot;1200&quot;:{&quot;slidesPerView&quot;:&quot;2&quot;,&quot;simulateTouch&quot;:true}}}">
+            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                    <div class="columns small-12 grid-item-wrap">
+                                                <div class="grid-image text-center" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2018/06/AbundantlyGood-Farm-Release-ASpot.jpg)">
+                                                    </div>
+                         
+                                                <a href="http://www.philabundance.org/philabundance-launches-abundantly-good-brand-benefiting-those-facing-hunger/" class="grid-item">
+                            <div class="grid-item-inner" data-equalizer-watch="item">
+                                <h4 class="title">Abundantly Good Brand Launches!</h4>
+                                <div class="desc">Every purchase rescues food, funds farms and helps feed those in need</div>                                <span class="link arrow">Learn More</span>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+                                <div class="swiper-slide">
+                    <div class="columns small-12 grid-item-wrap">
+                                                <div class="grid-image text-center" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2018/07/PCKatering-aspot-07-18.jpg)">
+                                                    </div>
+                         
+                                                <a href="https://www.philabundance.org/about/philabundance-community-kitchen/pckatering/" class="grid-item">
+                            <div class="grid-item-inner" data-equalizer-watch="item">
+                                <h4 class="title">PCKatering</h4>
+                                <div class="desc">Through PCKatering, our team will provide professionally-prepared food to you, and, in return, proceeds of your order will benefit students, graduates and our neighbors in need.</div>                                <span class="link arrow">Order today!</span>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+                                <div class="swiper-slide">
+                    <div class="columns small-12 grid-item-wrap">
+                                                <div class="grid-image text-center" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2018/08/PCK-A-Spot-OpenHouse.jpg)">
+                                                    </div>
+                         
+                                                <a href="https://www.philabundance.org/about/philabundance-community-kitchen/#info" class="grid-item">
+                            <div class="grid-item-inner" data-equalizer-watch="item">
+                                <h4 class="title">Join the Philabundance Community Kitchen Training Program</h4>
+                                <div class="desc">Prospective students must attend an open house meeting.</div>                                <span class="link arrow">Sign Up Today</span>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+                            </div>
+
+        </div>
+    
+    </div>
+
+        <a class="swiper-button-prev-promos slider-arrow"></a>
+        <a class="swiper-button-next-promos slider-arrow"></a>
+        <div class="swiper-pagination"></div>
+
+        
+</section>
+
+<section  class="module module-banner-video ">
+        <div id="video" class="video-wrap">
+        <div class="play"></div>
+        <video preload="auto" poster="https://i.vimeocdn.com/video/663417019_640.jpg" class="video-js" data-setup='{"controls":false,"fluid":true}'
+            id="vid-1">
+            <source src="https://player.vimeo.com/external/238100707.hd.mp4?s=5dcd01baaf85313e2769067b3d84ab79b2e6378e&amp;profile_id=174" type="video/mp4">
+        </video>
+    </div>
+        <div class="banner-wrap row align-bottom full-width">
+        <div class="small-12 large-12 columns text-center">
+                        <h1 style="font-size:12.777777777778vw" class="banner-title">Meet Philabundance</h1>
+                    </div>
+    </div>
+</section><section  class="module module-data">
+            <div class="row-wrap">
+            <div class="row align-top align-middle align-center">
+                                    <div class="large-5 medium-6 small-12 columns data-col">
+            <div id="data-graphic-people" class="data-graphic">
+    <div class="graphic-bg paper"></div>
+    <div class="data-images">
+        <div data-anim="up" id="tomato-group-1" class="data-image">
+            <div id="people-group-1-data-1" class="data-circle"><span>Seniors</span></div>
+            <div id="people-group-1-data-2" class="data-circle"><span>Children</span></div>
+            <div id="people-group-1-data-3" class="data-circle"><span>Veterans</span></div>
+        </div>
+        <div data-anim="up" id="tomato-double-1" class="data-image">
+            <div id="people-double-1-data-1" class="data-circle"><span>Students</span></div>
+        </div>
+        <div data-anim="up" id="tomato-double-2" class="data-image"></div>
+        <div data-anim="up" id="tomato-single-1" class="data-image">
+            <div id="people-single-1-data-1" class="data-circle"><span>Working Class</span></div>        
+        </div>
+        <div data-anim="up" id="tomato-single-2" class="data-image">
+            <div id="people-single-2-data-1" class="data-circle"><span>Single Parent</span></div>
+        </div>
+    </div>
+</div>    </div>                    <div class="large-7 medium-6 small-12 columns">
+    <h2 class="section-title"><em>90,000 People</em> THE NUMBER OF PEOPLE WE SERVE EACH WEEK</h2>
+    <div class="description"><p>Philabundance is the Delaware Valley’s largest hunger relief organization, acquiring, rescuing and distributing food to 90,000 people weekly in 9 counties in PA and NJ. Of the people Philabundance serves, 30% percent are children and 16% percent are seniors. Others who seek food assistance include people with disabilities, single parents, veterans, students and working class families.</p>
+</div>
+            <div class="link">
+            <a href="http://www.philabundance.org/about/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>More About Us</span></a>
+        </div>
+    </div>                            </div>
+        </div>
+            <div class="row-wrap">
+            <div class="row align-top align-middle align-center">
+                                    <div class="large-7 medium-6 small-12 columns">
+    <h2 class="section-title"><em>25,000,000 Pounds</em> NUMBER OF POUNDS WE DISTRIBUTED IN 2017</h2>
+    <div class="description"><p> Philabundance serves our neighbors in need through our own food distribution programs and a network of more than 350 social service agencies, including soup kitchens and emergency shelters. We can’t fight hunger alone -- we need everyone to collaborate, including individuals, corporations, foundations, the government and other hunger nonprofits. Together, we can end hunger and make nutritious food accessible to all.</p>
+</div>
+            <div class="link">
+            <a href="http://www.philabundance.org/donate/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Donate Today</span></a>
+        </div>
+    </div>                    <div class="large-5 medium-6 small-12 columns data-col">
+            <div id="data-graphic-pounds" class="data-graphic">
+    <div class="graphic-bg paper"></div>
+    <div class="data-images">
+        <div data-anim="up" id="banana-group-1" class="data-image">
+            <div id="pounds-group-1-data-1" class="data-circle"><span><em>4,471</em>Senior Boxes Distributed Every Month</span></div>
+            <div id="pounds-group-1-data-2" class="data-circle"><span><em>1.9M</em>Lbs of Fresh, Free Produce Distributed at 9 locations in PA + NJ</span></div>
+        </div>
+        <div data-anim="up" id="banana-group-2" class="data-image">
+            <div id="pounds-group-2-data-1" class="data-circle"><span><em>250K</em>Meals Made by our Job Training Program</span></div>
+        </div>
+        <div data-anim="up" id="banana-group-3" class="data-image">
+            <div id="pounds-group-3-data-1" class="data-circle"><span><em>191K</em>Lbs Distributed to Children in our Service Area</span></div>   
+        </div>
+        <div data-anim="up" id="banana-group-4" class="data-image"></div>
+    </div>
+</div>    </div>                            </div>
+        </div>
+    </section>
+ <section  class="module module-featured-story" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/10/Impact-Pattern.png)">
+    <div class="content-wrap row align-bottom align-center">
+                <div class="large-6 small-12 columns image-column">
+            <div class="image-content">
+                <img src="https://www.philabundance.org/wp-content/uploads/2017/08/Story-Letitia2.png" alt="letitia, philabundance success story">
+            </div>
+        </div>
+                <div class="large-6 small-12 columns text-center">
+            <div class="content">
+                <div class="content-inner quote-icons">
+                                        <blockquote>“When you’re on a fixed income with a family, every dollar counts. Living expenses like utilities and rent are tough, not to mention groceries.”</blockquote>
+                    
+                    <div class="link">
+                                                <a href="http://www.philabundance.org/stories/meals-bills-mom-affords/" class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Read Letitia&#039;s Story</span></a>                         <a href="http://www.philabundance.org/get-involved/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Get Involved</span></a>                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section  class="module module-content-slider paper">
+    <div class="row align-top align-center">
+                <div class="columns large-10 small-12 text-center">
+            <h2 class="section-title">Get <em>Involved</em></h2>
+        </div>
+            </div>
+    <div class="row align-center slider-row">
+        <div class="columns large-12 small-12 slider-col" data-equalizer="slide">
+            <div class="swiper-container" data-swiper="{&quot;slidesPerView&quot;:4,&quot;spaceBetween&quot;:30,&quot;nextButton&quot;:&quot;.swiper-button-next&quot;,&quot;prevButton&quot;:&quot;.swiper-button-prev&quot;,&quot;pagination&quot;:&quot;.module-content-slider .swiper-pagination&quot;,&quot;breakpoints&quot;:{&quot;700&quot;:{&quot;slidesPerView&quot;:&quot;1&quot;},&quot;900&quot;:{&quot;slidesPerView&quot;:&quot;2&quot;},&quot;1200&quot;:{&quot;slidesPerView&quot;:&quot;3&quot;}},&quot;loop&quot;:true,&quot;direction&quot;:&quot;horizontal&quot;}">
+                <div class="swiper-wrapper">
+                                        <div class="swiper-slide text-center">
+                        <div class="content-slide" data-equalizer-watch="slide">
+                            <div class="column large-12 small-12">
+                                                                <div class="slide-icon">
+                                    <img src="https://www.philabundance.org/wp-content/uploads/2017/09/Icon-Benefits-1.svg" alt="Philabundance employee benefits" />
+                                </div>
+                                                                <div class="slide-title text-center"><em>Get Involved</em> Donate</div>
+                                <div class="slide-description text-center">Just $1 provides 2 meals to help feed those in need</div>
+                            </div>
+                                                        <div class="link">
+                                <a href="http://www.philabundance.org/?page_id=9"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Donate Now</span></a>
+                            </div>
+                                                    </div>
+                    </div>
+                                        <div class="swiper-slide text-center">
+                        <div class="content-slide" data-equalizer-watch="slide">
+                            <div class="column large-12 small-12">
+                                                                <div class="slide-icon">
+                                    <img src="https://www.philabundance.org/wp-content/uploads/2017/09/icon-volunteer.svg" alt="hands holding icon" />
+                                </div>
+                                                                <div class="slide-title text-center"><em>Volunteer</em></div>
+                                <div class="slide-description text-center">Join the 15,000 people who give back to the community by volunteering each year</div>
+                            </div>
+                                                        <div class="link">
+                                <a href="http://www.philabundance.org/get-involved/volunteer/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Learn More</span></a>
+                            </div>
+                                                    </div>
+                    </div>
+                                        <div class="swiper-slide text-center">
+                        <div class="content-slide" data-equalizer-watch="slide">
+                            <div class="column large-12 small-12">
+                                                                <div class="slide-icon">
+                                    <img src="https://www.philabundance.org/wp-content/uploads/2017/09/icon-can.svg" alt="host a food drive" />
+                                </div>
+                                                                <div class="slide-title text-center"><em>Host</em> a Food Drive</div>
+                                <div class="slide-description text-center">Make the holidays happy, not hungry, for those in need</div>
+                            </div>
+                                                        <div class="link">
+                                <a href="http://www.philabundance.org/get-involved/donate-food/food-drives/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Sign Up Now</span></a>
+                            </div>
+                                                    </div>
+                    </div>
+                                        <div class="swiper-slide text-center">
+                        <div class="content-slide" data-equalizer-watch="slide">
+                            <div class="column large-12 small-12">
+                                                                <div class="slide-icon">
+                                    <img src="https://www.philabundance.org/wp-content/uploads/2017/09/icon-box.svg" alt="rescue food" />
+                                </div>
+                                                                <div class="slide-title text-center"><em>Help</em> Rescue Food</div>
+                                <div class="slide-description text-center">We seek grocers and farmers who want to donate produce and other food to those in need</div>
+                            </div>
+                                                        <div class="link">
+                                <a href="http://www.philabundance.org/get-involved/help-rescue-food/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Learn More</span></a>
+                            </div>
+                                                    </div>
+                    </div>
+                                        <div class="swiper-slide text-center">
+                        <div class="content-slide" data-equalizer-watch="slide">
+                            <div class="column large-12 small-12">
+                                                                <div class="slide-icon">
+                                    <img src="https://www.philabundance.org/wp-content/uploads/2017/09/icon-hearts.svg" alt="nonprofit philabundance employee benefits" />
+                                </div>
+                                                                <div class="slide-title text-center"><em>Partner</em> with Us</div>
+                                <div class="slide-description text-center">Help drive hunger from our communities by becoming a member agency and distributing food</div>
+                            </div>
+                                                        <div class="link">
+                                <a href="http://www.philabundance.org/get-involved/partner-with-us/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Apply Now</span></a>
+                            </div>
+                                                    </div>
+                    </div>
+                                        <div class="swiper-slide text-center">
+                        <div class="content-slide" data-equalizer-watch="slide">
+                            <div class="column large-12 small-12">
+                                                                <div class="slide-icon">
+                                    <img src="https://www.philabundance.org/wp-content/uploads/2017/09/icon-briefcase.svg" alt="Philabundance nonprofit careers in philadelphia" />
+                                </div>
+                                                                <div class="slide-title text-center"><em>Host a</EM>Fundraiser</div>
+                                <div class="slide-description text-center">Choose Philabundance as the beneficiary of your event</div>
+                            </div>
+                                                        <div class="link">
+                                <a href="http://www.philabundance.org/get-involved/hunger-fundraisers/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Get Started</span></a>
+                            </div>
+                                                    </div>
+                    </div>
+                                        <div class="swiper-slide text-center">
+                        <div class="content-slide" data-equalizer-watch="slide">
+                            <div class="column large-12 small-12">
+                                                                <div class="slide-icon">
+                                    <img src="https://www.philabundance.org/wp-content/uploads/2017/08/Icon-Advocate3.svg" alt="microphone icon" />
+                                </div>
+                                                                <div class="slide-title text-center"><em>Be an</em>Advocate</div>
+                                <div class="slide-description text-center">Make your voice heard through letter-writing, attending events and more</div>
+                            </div>
+                                                        <div class="link">
+                                <a href="http://www.philabundance.org/get-involved/advocate/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Take Action</span></a>
+                            </div>
+                                                    </div>
+                    </div>
+                                        <div class="swiper-slide text-center">
+                        <div class="content-slide" data-equalizer-watch="slide">
+                            <div class="column large-12 small-12">
+                                                                <div class="slide-icon">
+                                    <img src="https://www.philabundance.org/wp-content/uploads/2017/09/icon-beet.svg" alt="philabundance beet icon" />
+                                </div>
+                                                                <div class="slide-title text-center"><em> Donate</em> Food</div>
+                                <div class="slide-description text-center">Provide produce or shelf-stable items to help feed those in need.</div>
+                            </div>
+                                                        <div class="link">
+                                <a href="http://www.philabundance.org/get-involved/donate-food/"  class="button text-white">
+					
+					<svg width="183" height="49" viewBox="0 0 183 49" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 48.833h182.153V0H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path class="button-fill" d="M155.27 0h10.807v1.104c.428.036.91.022 1.482-.074 1.332.194 1.517-.833 2.363.24 1.622.166 3.724-.556 5.087.306l-.444.146c.525-.463 2.168-.72 2.266.224.18.103.542.307.723.412.38 1.13.213 1.54.04 2.81-1.08.195-.05.05-.107 1.565.365.03 1.1.087 1.467.118-.032.168-.11.503-.15.67.633.015.066.394.287.987-.66.13-.31.26-.947.39.187.47.545.798 1.068.98-.335.812.327.76.417 1.82 1.06.226 1.748-.272 2.096 1.167-.81.38.368.734-.436 1.095-.444.75-.172 1.282-.533 2.09 1.287-.077 1.37 1.34.21 1.63.718.13 1.5 1.572.215 1.382-.626.073-1.208.255-1.74.548.62.41 1.795.008 2.138.787.51.242.2.322.573.838-1.185.04-.992.924-2.045 1.283-.07.518-.405.843-1.01.97.026.72 2.134 1.884.352 1.718-1.038.327-.992 1.3-.826 2.16-.228.265-.684.79-.91 1.055.226.673.423 1.393.63 2.1-.574.275-1.055.672-1.38 1.22 1.01.135 2.057.18 3.087.3-.09.71-.91.828-1.437 1.055-.13 1.025.813.942 1.52 1.093-.545 1.118-2.247 1.418-1.377 3.07.773.098.826.377.16.85l-.046.395c.52-.447 2.017-.05 1.377.788l-.322.08c-.52.343-.964.766-1.393 1.207-.318.495-.745.832-1.275 1.014.223.44.043 1.516-.59 1.5l-.663-.007.065.54c-.276.66-.417 2.23-1.456 1.84.216 1.34-1.436 1.333-2.308 1.745-1.496.28-3.023.345-4.49-.066-.473.324-1.158 1.16-1.74.91v.698H149.77c-.77.07-1.633.047-2.512 0H27.568c-.587.117-1.23.105-1.815 0h-3.438v-.276c-.197-.018-.393-.052-.585-.102-.65-.236-1.333-.383-1.974-.573-1.42.7-2.793-.425-4.17-.603-1.558-.038-2.797-1.398-4.365-.68-1.948-1.363-4.27-2.026-6.524-2.815-.275-.182-.833-.557-1.113-.744-.077-.09-.24-.268-.32-.354-.11-.098-.325-.282-.432-.382-.266-.14-.792-.435-1.06-.588-.09-.074-.265-.225-.354-.3C.57 40.64-.582 39.217.342 38.2c.103-.23.31-.682.415-.91.043-.19.13-.57.176-.76l-.266-.506-.315-.03c.242-.738.595-1.443 1.123-2.05l.3-.604c0-.267 0-.81-.004-1.08-.19-.153-.583-.46-.783-.614l.272-.5c-.41-.698.048-1.505.152-2.208-.852-.266-.892-.516-.13-.755-.506-.285-.847-1.598-.106-1.637.447-.463.32-1.02.25-1.546-.508-.644-.41-1.046.3-1.21l.577-.19c-.384-.617-.252-1.02.4-1.22.3-.452.62-.884.93-1.324l.23-.418c.06-.24.18-.71.238-.948.428-.544.807-1.113 1.09-1.722l-.32.068c-.134-.657-.316-1.276-.597-1.87.073-.208.215-.623.284-.83-.008-.23-.024-.68-.034-.91l-.428-.006c.163-.962 1.724-1.033 1.444-2.153-.327-.517-1.292-1.402-.32-1.813 1.584-.61.387-2.135-.4-2.88C6.533 6.85 8.783 6.342 9.207 4.41c1.674-.854 1.758-2.75 3.21-3.77 1.01-.595 2.226.164 3.32.176.27-.706 2.073-.674 2.77-.278.582-.245 1.103-.145 1.577.307.054-.798 1.608-.81 2.23-.475V0H155.27z" fill="#5EBA46" mask="url(#b)"/></g></svg>
+				
+				<span>Learn More</span></a>
+                            </div>
+                                                    </div>
+                    </div>
+                                    </div>
+            </div>
+            <a class="swiper-button-prev slider-arrow"></a>
+            <a class="swiper-button-next slider-arrow"></a>
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </div>
+</section><section  class="module module-form">
+    <div class="row align-middle align-center">
+        <div class="large-12 columns text-center">
+                            <h2 class="section-title">Find <em>Food</em> Near You</h2>
+                                        <div class="form-description"><p>We work with 350 social service agencies providing food to the community – find one near you</p>
+</div>
+                                                    
+            <div class="form-wrapper">
+                <div class="widget-wrap">
+                    
+        <form action="https://www.philabundance.org/find-food/food-map/" method="post" id="wpsl-widget-form">
+                        <p>
+                <label for="wpsl-widget-search">Search by Zip Code</label>
+                <input type="text" name="wpsl-widget-search" placeholder="Zip Code" id="wpsl-widget-search" value="" >
+            </p>
+                        <p><input type="submit" value="Search"></p>
+        </form>
+        <style>#wpsl-widget-form label {display: block;}</style>
+        1
+                </div>       
+            </div>
+                                        
+        </div>
+    </div>
+        <div class="row align-center text-center column-links">
+                <a href="http://www.philabundance.org/find-food/food-support-for-seniors/" >Free Food for Seniors</a>         <a href="http://www.philabundance.org/find-food/free-farmers-markets/" >Fresh Food for All</a>         <a href="http://www.philabundance.org/find-food/free-food-for-kids/" >Free Food for Kids</a>     </div>
+    </section>
+<footer id="main-footer" class="cork">
+    <div id="footer-veggies" class="row full-width"></div>
+    <div id="footer-top" class="row">
+        <div class="columns large-9 small-12">
+            <div class="footer-nav">
+                                <div id="footer-nav">
+                    <ul class="menu align-top">
+                        <li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-243"><a href="http://#">Information</a>
+<ul class="sub-menu">
+	<li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="https://www.philabundance.org/news-blog/">News &#038; Blog</a></li>
+	<li id="menu-item-3550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3550"><a href="https://www.philabundance.org/events/">Events</a></li>
+	<li id="menu-item-244" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-244"><a href="https://www.philabundance.org/about/faqs/">FAQ</a></li>
+	<li id="menu-item-3300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3300"><a href="https://www.philabundance.org/wp-content/uploads/2017/10/PHLB-PrivacyPolicy.pdf">Privacy Policy</a></li>
+	<li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248"><a href="https://www.philabundance.org/sitemap/">Sitemap</a></li>
+</ul>
+</li>
+<li id="menu-item-245" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-245"><a href="http://#">Quick Links</a>
+<ul class="sub-menu">
+	<li id="menu-item-151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151"><a href="https://www.philabundance.org/contact/">Contact</a></li>
+	<li id="menu-item-2038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2038"><a href="https://www.agencyexpress3.org/AgencyExpress30/NewLogin.aspx">AgencyExpress</a></li>
+	<li id="menu-item-4598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4598"><a href="https://www.philabundance.org/about/aib-international-badges/">AIB International Badges</a></li>
+	<li id="menu-item-4880" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4880"><a href="http://www.philabundance.org/wp-content/uploads/2018/05/Philabundance-Form-990-9-30-17-UPDATED.pdf">FY17 990</a></li>
+	<li id="menu-item-4881" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4881"><a href="http://www.philabundance.org/wp-content/uploads/2018/07/FY17-Financial-Statements.pdf">FY17 Financial Statements</a></li>
+</ul>
+</li>
+
+                        <li>
+                            <a>Get in Touch</a>
+                            <ul>
+                                <p>3616 South Galloway Street<br />
+Philadelphia, PA 19148<br />
+P: (215) 339-0900<br />
+F: (215) 339-0924</p>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                            </div>
+        </div>
+        <div class="columns large-3 small-12 footer-info">
+            <div class="row align-center">
+                <div class="columns large-12 medium-6 small-12 footer-social">
+                                                                        <a href="https://www.facebook.com/Philabundance/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="https://twitter.com/Philabundance" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="https://www.instagram.com/philabundance/?hl=en" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="https://www.linkedin.com/company-beta/360791" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                                    <a href="https://www.youtube.com/channel/UCYaiX3vLIIc9PyspRo89yOg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                            </div>
+                <div class="columns large-12 medium-6 small-12 footer-logos">
+                    <a href="http://www.feedingamerica.org" target="_blank"><img src="https://www.philabundance.org/wp-content/themes/push10custom/assets/imgs/feeding-america-logo.svg" alt="Philabundance is a proud member of Feeding America"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-legal" class="row text-center full-width">
+        <div class="columns large-12">
+            <span>Copyright © 2018 Philabundance. All rights reserved. | <a href="http://www.push10.com" target="_blank">Web Design by Push10</a> | Privacy Policy »</span>
+        </div>
+    </div>
+</footer>
+</main>
+    </div>    <div class='advanced-browser-check' style='display:none;' data-url='{"abc_url":"https:\/\/www.philabundance.org\/wp-admin\/admin-ajax.php"}'></div><!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://www.philabundance.org/wp-admin/admin-ajax.php";
+</script>
+
+<!--BEGIN: TRACKING CODE MANAGER BY INTELLYWP.COM IN BODY//-->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NZPC6L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--END: https://wordpress.org/plugins/tracking-code-manager IN BODY//--><link rel='stylesheet' id='font-awesome-css'  href='https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/foundation-sites/dist/js/foundation.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/foundation-sites/dist/js/plugins/foundation.reveal.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/foundation-sites/dist/js/plugins/foundation.equalizer.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/what-input/dist/what-input.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/gsap/src/minified/TweenMax.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/scrollmagic/scrollmagic/minified/ScrollMagic.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/scrollmagic/scrollmagic/minified/plugins/jquery.ScrollMagic.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/assets/js/main.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/header/js/scripts.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/swiper/dist/js/swiper.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/banner/js/scripts.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/assets/vendor/video-js/video.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/banner_video/js/scripts.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/data/js/scripts.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://maps.google.com/maps/api/js?language=en&#038;region=us&#038;key=AIzaSyAA0WYeYkOq6ua9J71B1n0uEM48M_VqEOo&#038;libraries=places'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpslWidgetSettings = {"autoComplete":"1","geocodeComponents":{"country":"US"},"autoLocate":"1","geoLocationTimout":"5000","filterPattern":["postal_code","postal_code_prefix,postal_code"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/wp-store-locator-widget/js/wpsl-widget.min.js?ver=1.1.0'></script>
+
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9db5671dcb","applicationID":"87792267","transactionName":"YlRUbEADXEIEARJcX1sed1tGC11fSgQUWl5BQVdfVw==","queueTime":0,"applicationTime":655,"atts":"ThNXGggZT0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
