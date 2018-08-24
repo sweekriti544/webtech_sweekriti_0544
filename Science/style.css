@@ -1,0 +1,27 @@
+#wrapper{
+width:1024 px;
+margin: 0px auto;
+text-align: justify;
+}
+
+body {
+	overflow: visible;
+	padding:0;
+	margin-left=1000px;
+	}
+h1,h2,h3{
+	font: italic 3vw/24px Times New Roman, Arial, Serif;
+	color:#d64161;
+	margin-bottom:25px;
+
+	
+}
+p{
+	color:#034f84;
+	text-indent: 5px;
+	
+}
+
+p span.alert{
+	color: #bc5a45
+}

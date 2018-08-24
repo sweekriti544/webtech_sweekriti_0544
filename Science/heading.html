@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Science</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+</script>
+<div id="wrapper">
+<h1> Science</h1>
+<img src="science.png">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis magna a lectus cursus, 
+id lobortis turpis tempus. Cras quis dictum sem. Morbi id pellentesque leo, non molestie leo.<span id="dots">...</span><span id="more"> 
+Aliquam tincidunt iaculis lectus, non dapibus nunc vestibulum sed. Etiam ac urna at ipsum bibendum 
+rhoncus quis at est. Nullam vestibulum nibh vitae metus eleifend, id molestie sem dictum. Vivamus luctus, purus quis 
+sollicitudin convallis, diam nibh luctus lectus, eget viverra ipsum risus quis ipsum.
+In lacinia imperdiet blandit.</span></p>
+<a href="#" onclick="myFunction()" id="myBtn">Read more  &raquo;</a>
+
+ <h2> Biology</h2>
+ <img src="biology.jpeg">
+ <p>Etiam ut nisl non quam suscipit bibendum. Sed nunc enim, dignissim et magna et, congue porttitor sapien.
+ Phasellus mattis mauris at hendrerit pulvinar. In suscipit odio at urna gravida mollis. Aliquam nec mi quam.
+ Cras semper ornare venenatis. Phasellus sit amet auctor est.<span class="alert"> Mauris quis sem ornare, maximus ante sed, iaculis mauris.
+ Aenean sit amet libero facilisis, lobortis est at, semper lorem.
+
+Donec sed aliquam nulla. Integer gravida tempor purus, sit amet malesuada lectus finibus in.
+ Sed vitae nibh arcu. Morbi ornare ut nulla vel molestie. Nullam at tristique risus.
+ Donec imperdiet imperdiet imperdiet.
+ Sed tincidunt mattis arcu a mattis. Suspendisse porta eros augue, eu ornare lorem finibus auctor. 
+ Sed auctor congue arcu, nec lobortis dui gravida vitae. Maecenas ultrices vitae elit a mollis. 
+ Praesent in mollis ipsum. Praesent tincidunt enim et ante condimentum auctor.
+ <span></p>
+ 
+ 
+<h3>Genetics</h3>
+ <img src="genetics.jpeg" height="150px" width="395px">
+ <p>Sed lacinia, est eget suscipit ultrices, lectus lorem pellentesque lectus,
+ id eleifend sem felis in neque. Nulla ac iaculis tellus, eget porttitor nulla. 
+ Proin eleifend interdum leo et posuere. Suspendisse aliquet tempus elit, non molestie mi condimentum in.
+ Pellentesque semper pulvinar quam, tincidunt imperdiet est ornare non. Curabitur quis nisi in quam ultricies suscipit vitae eu tortor.
+ Mauris cursus magna et tristique eleifend. Integer ac lobortis lacus, at maximus ipsum. Curabitur dapibus neque et massa varius egestas.
+ Vivamus egestas vulputate augue ac porta. Donec molestie dui eget dictum pellentesque. Nam id finibus velit, vel condimentum metus.
+ Fusce varius tempus elit, sed auctor erat placerat nec.
+Donec sed aliquam nulla. Integer gravida tempor purus, sit amet malesuada lectus finibus in.
+ Sed vitae nibh arcu. Morbi ornare ut nulla vel molestie. Nullam at tristique risus.
+</p>
+</div>
+</body>
+</html>
