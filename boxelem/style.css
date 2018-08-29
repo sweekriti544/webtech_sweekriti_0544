@@ -1,0 +1,48 @@
+
+
+#wrapper {
+	 max-width: 1024px; 
+padding: auto;
+margin:auto;
+border: 25px solid yellow;
+background-color:	#f0f4ff;
+ 
+}
+#heading {
+ background-color: #1a6600;
+    height:80px;
+    padding: 10px;
+    margin: 25px;
+	
+}
+#paragraph{
+	background-color:red;
+	height:500px;
+    padding: 10px;
+    margin: 25px;
+	color:#FFFF;
+}
+#footer{
+	background-color:blue;
+	height:80px;
+    padding: 10px;
+    margin: 25px;
+	color:#39e600;
+	text-align:center;
+}
+body {
+	overflow: visible;
+	padding:0;
+	margin-left=1000px;
+	}
+h1{
+	text-align:center;
+	font: italic 3vw/2px Times New Roman,Arial, Serif;
+	margin-bottom:25px;
+}
+p{
+	
+	text-indent: 5px;
+	
+}
+
