@@ -1,0 +1,63 @@
+<html>
+<head>
+<style>
+ body {
+    text-align: center;
+	padding: 120px;
+}
+form {
+    display: inline-block;
+	border: 1px solid red;
+	padding:6px;
+	
+}
+</style>
+</head>
+<body onload="checkCookie()">
+
+<form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+Username <input type="text" id="myInput" oninput="myFunction()"><br>
+<p id="demo"></input>
+<script>
+function myFunction() {
+    var x = document.getElementById("myInput").value;
+    document.getElementById("demo").innerHTML = "Username is " + x;
+
+    }
+
+function filterFunction() {
+	var country = document.getElementById("select1").value;
+	var country2 = document.getElementById("select2");
+	country2.value = country;
+}
+
+
+</script>
+<div class="dropdown">
+<!-- <button onclick="myFunction1()" class="dropbtn">Dropdown</button> -->
+  <div id="one" class="dropdown-content">  
+  Select Country:  <select id="select1" oninput ="filterFunction()">
+    <option value="Nepal">Nepal</option>
+    <option value="China">China</option>
+    <option value="India">India</option>
+    <option value="Japan">Japan</option>
+
+	</select>
+  </div>
+<br>
+  <div id="two" class="dropdown-content">  
+   Selected Country:    <select id="select2">
+    <option value="Nepal">Nepal</option>
+    <option value="China">China</option>
+    <option value="India">India</option>
+    <option value="Japan">Japan</option>
+	</select>
+  </div>
+</div>
+<br>
+<input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions 
+<br><br>
+<input type="submit" name="submit" value="Submit" />
+</form>
+</body>
+</html>
