@@ -1,0 +1,11 @@
+<?xml version = "1.0"?>
+
+<!DOCTYPE address [
+   <!ELEMENT address ( name )>
+   <!ELEMENT name ( #PCDATA )>
+   <!ATTLIST name id CDATA #REQUIRED>
+]>
+
+<address>
+   <name id = "123">Tanmay Patil</name>
+</address>
